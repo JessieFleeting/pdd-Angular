@@ -1,0 +1,20 @@
+<ul>
+    <li
+      *ngFor="let tab of tabs;
+      let i = index;
+      let f = first;
+      let l = last;
+      let odd = odd;
+      let even = even;
+      ">
+      <a
+        href="#"
+        [class.active] = "selectedIndex === i"
+        (click) = "handleSelection(i)"
+        [class.first] = "f"
+        [class.last] = "l"
+        [class.odd] = "odd"
+        [class.even] = "even"
+      >{{ tab.title }}</a>
+    </li>
+  </ul>

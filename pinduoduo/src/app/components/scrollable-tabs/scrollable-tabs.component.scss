@@ -1,0 +1,25 @@
+ul {
+    display: inline-block;
+    display: flex;
+    li {
+        display: inline-block;
+        margin: 5px;
+        white-space: nowrap;
+    }
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.active {
+    color: red;
+    font-weight: 700;
+}
+.first, .last {
+    font-weight: 700;
+}
+.odd {
+    font-size: 14px;
+}
+.even {
+   font-size: 16px;
+}
