@@ -1,10 +1,19 @@
 ul {
-    display: inline-block;
     display: flex;
     li {
-        display: inline-block;
+        // display: inline-block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         margin: 5px;
         white-space: nowrap;
+        .indicator {
+            height: 2px;
+            width: 2rem;
+            background-color: brown;
+            margin-top: 2px;
+        }
     }
 }
 ::-webkit-scrollbar {

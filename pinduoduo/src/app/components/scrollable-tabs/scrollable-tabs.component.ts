@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 interface menus {
   title: string,
   link: string
@@ -8,7 +8,14 @@ interface menus {
   templateUrl: './scrollable-tabs.component.html',
   styleUrls: ['./scrollable-tabs.component.scss']
 })
-export class ScrollableTabsComponent implements OnInit {
+/**
+ * implements OnInit这个接口是可选的，但是还是建议加上，因为会有提醒
+ * 1. 构造函数永远第一个被调用
+ * 2. ngOnChanges
+ * 3. ngOnInit组件初始化完成，在这个函数中，可以完全使用组件的属性和方法 
+ * 
+ */
+export class ScrollableTabsComponent implements OnInit, OnChanges {
   title :string = '拼多多';
   tabs :menus[] = [
     {
@@ -102,12 +109,23 @@ export class ScrollableTabsComponent implements OnInit {
     
   ];
   selectedIndex :number = 0;
+
   handleSelection (index: number) {
     this.selectedIndex = index;
   }
-  constructor() { }
 
+  constructor() {
+    console.log('组件构造调用');
+    
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('组件输入属性改变', changes);
+  }
+  
   ngOnInit(): void {
+    console.log('组件初始化');
+    
   }
 
 }

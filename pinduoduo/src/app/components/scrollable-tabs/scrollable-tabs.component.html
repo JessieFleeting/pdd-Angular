@@ -9,12 +9,13 @@
       ">
       <a
         href="#"
-        [class.active] = "selectedIndex === i"
+        [class.active] = " i === selectedIndex"
         (click) = "handleSelection(i)"
         [class.first] = "f"
         [class.last] = "l"
         [class.odd] = "odd"
         [class.even] = "even"
       >{{ tab.title }}</a>
+      <span class="indicator" *ngIf="selectedIndex === i"></span>
     </li>
-  </ul>
+</ul>
