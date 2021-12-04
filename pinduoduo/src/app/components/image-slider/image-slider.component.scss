@@ -1,0 +1,50 @@
+.container {
+    position: relative;
+    overflow: hidden;
+    // 不可滚动，里面的长条图片才是可滚动的
+    .image-slider {
+        display: flex;
+        overflow-x: scroll;
+        // 动画效果
+        scroll-behavior: smooth;
+        // 可以手动触
+        -webkit-overflow-scrolling: touch;
+        // 强制在横轴上吸附
+        scroll-snap-type: x mandatory;
+        img {
+            width: 100%;
+            height: 100%;
+            // 防止有些图片较大显示不全
+            object-fit: cover;
+            // 吸附显示在图片的起始位置
+            scroll-snap-align: start;
+        }
+    }
+}
+
+// 底边的遮罩
+.nav-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.5;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    .slide-button {
+        display: flex;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        text-decoration: none;
+        border-radius: 50%;
+        margin: 5px;
+    }
+}
+
+.nav-section .slide-button-select {
+    // 底部小圆点选中时样式
+    background-color: red;
+}

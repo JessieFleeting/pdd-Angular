@@ -1,5 +1,9 @@
 ul {
     display: flex;
+    // 防止与轮播图同时滚动
+    overflow-x: auto;
+    // 在手机上可以触摸滚动
+    -webkit-overflow-scrolling: touch;
     li {
         // display: inline-block;
         display: flex;
@@ -11,7 +15,7 @@ ul {
         .indicator {
             height: 2px;
             width: 2rem;
-            background-color: brown;
+            // 相对于根节点
             margin-top: 2px;
         }
     }
@@ -30,5 +34,5 @@ ul {
     font-size: 14px;
 }
 .even {
-   font-size: 16px;
+   font-size: 15 px;
 }

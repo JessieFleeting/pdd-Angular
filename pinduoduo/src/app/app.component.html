@@ -1,1 +1,21 @@
-<app-scrollable-tabs></app-scrollable-tabs>
+<!-- 父传子，属性绑定（子组件再input) -->
+<!-- 试验ngDestory -->
+<!-- *ngIf = "topMenuBackgroundColor === '#fff'" -->
+<app-scrollable-tabs
+    [topMenus]="topMenus"
+    (menuChange)="handleMenuChange($event)"
+    [topMenuBackgroundColor] = "topMenuBackgroundColor"
+    [titleActiveColor] = "titleActiveColor"
+    [titleColor] = "titleColor"
+    [indicatorColor] = "indicatorColor"
+>
+<!-- 对应子组件内容投影 -->
+<!-- <div>Hello ngAfterContentInit 这里的内容初始化完成之后，想要做点什么</div> -->
+</app-scrollable-tabs>
+
+<!-- 因为是组件，可以不起别名#imgaeSliderCom，直接使用就可 -->
+<app-image-slider
+ #imgaeSliderCom
+ [sliders]="imageSliders"
+ [sliderHeight]="sliderHeight"
+></app-image-slider>

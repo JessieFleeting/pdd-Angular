@@ -1,21 +1,34 @@
-<ul>
+<ul [ngStyle]="{'background-color': topMenuBackgroundColor}">
     <li
-      *ngFor="let tab of tabs;
+      *ngFor="let menu of topMenus;
       let i = index;
       let f = first;
       let l = last;
       let odd = odd;
       let even = even;
       ">
+      <!--  [class.active] = "i === selectedIndex" -->
       <a
         href="#"
-        [class.active] = " i === selectedIndex"
+        [ngStyle]="{color: i === selectedIndex ? titleActiveColor : titleColor }"
         (click) = "handleSelection(i)"
         [class.first] = "f"
         [class.last] = "l"
-        [class.odd] = "odd"
-        [class.even] = "even"
-      >{{ tab.title }}</a>
-      <span class="indicator" *ngIf="selectedIndex === i"></span>
+        [ngClass]="{'even': even, 'odd': odd}"
+      >{{ menu.title }}</a>
+      <!-- ngIf可以有else，在ng-template中定义 -->
+      <!-- <span class="indicator" *ngIf="i === selectedIndex; else elsIndicatorTemplate"></span> -->
+      <!-- ngIf比类绑定节省了许多DOM节点 -->
+      <span
+        class="indicator"
+        [ngStyle]="{'background-color': indicatorColor}"
+        *ngIf="i === selectedIndex"
+      ></span>
     </li>
+    <!-- <ng-template #elsIndicatorTemplate>
+      <span>hello</span>
+    </ng-template> -->
+    
 </ul>
+<!-- 支持内容投影，对应父组件中子组件selector中的html -->
+<!-- <ng-content></ng-content> -->
