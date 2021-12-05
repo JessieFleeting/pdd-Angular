@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { Menus } from './components/scrollable-tabs/scrollable-tabs.type';
-import { ImageSlider } from './components/image-slider/image-slider.type';
-import { ImageSliderComponent } from './components';
+import { ImageSliderComponent } from './shared/components';
+import { ImageSlider } from './shared/components/image-slider/image-slider.type';
+import { Menus } from './shared/components/scrollable-tabs/scrollable-tabs.type';
 
 @Component({
   selector: 'app-root',

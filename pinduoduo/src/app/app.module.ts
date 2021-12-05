@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HorizotionGridComponent, ImageSliderComponent, ScrollableTabsComponent } from './components';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScrollableTabsComponent,
-    ImageSliderComponent,
-    HorizotionGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
