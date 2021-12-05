@@ -5,3 +5,4 @@
  */
 export * from './scrollable-tabs';
 export * from './image-slider';
+export * from './horizotion-grid';

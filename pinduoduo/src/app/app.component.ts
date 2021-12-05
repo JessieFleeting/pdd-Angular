@@ -9,6 +9,7 @@ import { ImageSliderComponent } from './components';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  username :string = '';
   /**
    * 2.用angular组件在类中引用。
    * 可以不起别名
