@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Confirmable, Emoji } from '../../decorators';
 
 @Component({
   selector: 'app-horizotion-grid',
@@ -6,8 +7,16 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./horizotion-grid.component.scss']
 })
 export class HorizotionGridComponent implements OnInit {
-  // username: any = '';
+  // 自定义注解(应用于属性)
+  @Emoji() result = 'Hello';
 
+  // 注解应用于函数（可以传参）
+  @Confirmable('您确定执行此操作吗?') 
+  handleClick() {
+    console.log('操作已执行');
+  }
+
+  // username: any = '';
   @Output() usernameChange = new EventEmitter();
 
   // 把此属性定义成私有的，再分别公共读写
